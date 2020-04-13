@@ -1,0 +1,83 @@
+F:\Inf\sashka einstein\education\семестры\весенний семестр 2017\ТВиМС (лаб)\лаб.раб\Modeling\sln\Modeling\Modeling\bin\Debug\Modeling.exe
+F:\Inf\sashka einstein\education\семестры\весенний семестр 2017\ТВиМС (лаб)\лаб.раб\Modeling\sln\Modeling\Modeling\bin\Debug\Modeling.pdb
+F:\Inf\sashka einstein\education\семестры\весенний семестр 2017\ТВиМС (лаб)\лаб.раб\Modeling\sln\Modeling\Modeling\obj\x86\Debug\Modeling.Form1.resources
+F:\Inf\sashka einstein\education\семестры\весенний семестр 2017\ТВиМС (лаб)\лаб.раб\Modeling\sln\Modeling\Modeling\obj\x86\Debug\Modeling.Properties.Resources.resources
+F:\Inf\sashka einstein\education\семестры\весенний семестр 2017\ТВиМС (лаб)\лаб.раб\Modeling\sln\Modeling\Modeling\obj\x86\Debug\Modeling.csproj.GenerateResource.Cache
+F:\Inf\sashka einstein\education\семестры\весенний семестр 2017\ТВиМС (лаб)\лаб.раб\Modeling\sln\Modeling\Modeling\obj\x86\Debug\Modeling.exe
+F:\Inf\sashka einstein\education\семестры\весенний семестр 2017\ТВиМС (лаб)\лаб.раб\Modeling\sln\Modeling\Modeling\obj\x86\Debug\Modeling.pdb
+F:\Inf\sashka einstein\education\семестры\весенний семестр 2017\ТВиМС (лаб)\лаб.раб\Modeling\sln\Modeling\Modeling\obj\x86\Debug\Modeling.Form2.resources
+F:\Inf\sashka einstein\education\семестры\весенний семестр 2017\ТВиМС (лаб)\лаб.раб\Modeling\sln\Modeling\Modeling\obj\x86\Debug\Modeling.Form3.resources
+F:\Inf\sashka einstein\education\семестры\весенний семестр 2017\ТВиМС (лаб)\лаб.раб\Modeling\sln\Modeling\Modeling\obj\x86\Debug\Modeling.csprojResolveAssemblyReference.cache
+F:\Modeling\Modeling\obj\x86\Debug\Modeling.exe
+F:\Modeling\Modeling\obj\x86\Debug\Modeling.pdb
+E:\Education\Теория вероятности\Лабораторные\Modeling\Modeling\bin\Debug\Modeling.exe
+E:\Education\Теория вероятности\Лабораторные\Modeling\Modeling\bin\Debug\Modeling.pdb
+E:\Education\Теория вероятности\Лабораторные\Modeling\Modeling\obj\x86\Debug\Modeling.csprojResolveAssemblyReference.cache
+E:\Education\Теория вероятности\Лабораторные\Modeling\Modeling\obj\x86\Debug\Modeling.Form1.resources
+E:\Education\Теория вероятности\Лабораторные\Modeling\Modeling\obj\x86\Debug\Modeling.Form2.resources
+E:\Education\Теория вероятности\Лабораторные\Modeling\Modeling\obj\x86\Debug\Modeling.Form3.resources
+E:\Education\Теория вероятности\Лабораторные\Modeling\Modeling\obj\x86\Debug\Modeling.Properties.Resources.resources
+E:\Education\Теория вероятности\Лабораторные\Modeling\Modeling\obj\x86\Debug\Modeling.csproj.GenerateResource.Cache
+E:\Education\Теория вероятности\Лабораторные\Modeling\Modeling\obj\x86\Debug\Modeling.csproj.CoreCompileInputs.cache
+E:\Education\Теория вероятности\Лабораторные\Modeling\Modeling\obj\x86\Debug\Modeling.exe
+E:\Education\Теория вероятности\Лабораторные\Modeling\Modeling\obj\x86\Debug\Modeling.pdb
+C:\Users\aleks\Desktop\Modeling\Modeling\obj\x86\Debug\Modeling.exe
+C:\Users\aleks\Desktop\Modeling\Modeling\obj\x86\Debug\Modeling.pdb
+C:\Users\aleks\Desktop\Modeling\Modeling\bin\Debug\Modeling.exe
+C:\Users\aleks\Desktop\Modeling\Modeling\bin\Debug\Modeling.pdb
+C:\Users\aleks\Desktop\Modeling\Modeling\obj\x86\Debug\Modeling.csprojResolveAssemblyReference.cache
+C:\Users\aleks\Desktop\Modeling\Modeling\obj\x86\Debug\Modeling.Form1.resources
+C:\Users\aleks\Desktop\Modeling\Modeling\obj\x86\Debug\Modeling.Form2.resources
+C:\Users\aleks\Desktop\Modeling\Modeling\obj\x86\Debug\Modeling.Form3.resources
+C:\Users\aleks\Desktop\Modeling\Modeling\obj\x86\Debug\Modeling.Properties.Resources.resources
+C:\Users\aleks\Desktop\Modeling\Modeling\obj\x86\Debug\Modeling.csproj.GenerateResource.Cache
+C:\Users\aleks\Desktop\Учеба\Теория вероятностей\var\var8\Modeling\obj\x86\Debug\Modeling.exe
+C:\Users\aleks\Desktop\Учеба\Теория вероятностей\var\var8\Modeling\obj\x86\Debug\Modeling.pdb
+C:\Users\aleks\Desktop\Учеба\Теория вероятностей\var\var8\Modeling\bin\Debug\Modeling.exe
+C:\Users\aleks\Desktop\Учеба\Теория вероятностей\var\var8\Modeling\bin\Debug\Modeling.pdb
+C:\Users\aleks\Desktop\Учеба\Теория вероятностей\var\var8\Modeling\obj\x86\Debug\Modeling.csprojResolveAssemblyReference.cache
+C:\Users\aleks\Desktop\Учеба\Теория вероятностей\var\var8\Modeling\obj\x86\Debug\Modeling.Form1.resources
+C:\Users\aleks\Desktop\Учеба\Теория вероятностей\var\var8\Modeling\obj\x86\Debug\Modeling.Form2.resources
+C:\Users\aleks\Desktop\Учеба\Теория вероятностей\var\var8\Modeling\obj\x86\Debug\Modeling.Form3.resources
+C:\Users\aleks\Desktop\Учеба\Теория вероятностей\var\var8\Modeling\obj\x86\Debug\Modeling.Properties.Resources.resources
+C:\Users\aleks\Desktop\Учеба\Теория вероятностей\var\var8\Modeling\obj\x86\Debug\Modeling.csproj.GenerateResource.Cache
+C:\Users\andy\Desktop\andy\py\var8\var8\Modeling\bin\Debug\Modeling.exe
+C:\Users\andy\Desktop\andy\py\var8\var8\Modeling\bin\Debug\Modeling.pdb
+C:\Users\andy\Desktop\andy\py\var8\var8\Modeling\obj\x86\Debug\Modeling.csprojResolveAssemblyReference.cache
+C:\Users\andy\Desktop\andy\py\var8\var8\Modeling\obj\x86\Debug\Modeling.Form1.resources
+C:\Users\andy\Desktop\andy\py\var8\var8\Modeling\obj\x86\Debug\Modeling.Form2.resources
+C:\Users\andy\Desktop\andy\py\var8\var8\Modeling\obj\x86\Debug\Modeling.Form3.resources
+C:\Users\andy\Desktop\andy\py\var8\var8\Modeling\obj\x86\Debug\Modeling.Properties.Resources.resources
+C:\Users\andy\Desktop\andy\py\var8\var8\Modeling\obj\x86\Debug\Modeling.csproj.GenerateResource.Cache
+C:\Users\andy\Desktop\andy\py\var8\var8\Modeling\obj\x86\Debug\Modeling.csproj.CoreCompileInputs.cache
+C:\Users\andy\Desktop\andy\py\var8\var8\Modeling\obj\x86\Debug\Modeling.exe
+C:\Users\andy\Desktop\andy\py\var8\var8\Modeling\obj\x86\Debug\Modeling.pdb
+C:\Users\Alexandra\Desktop\var8\var8\var8\Modeling\obj\x86\Debug\Modeling.exe
+C:\Users\Alexandra\Desktop\var8\var8\var8\Modeling\obj\x86\Debug\Modeling.pdb
+C:\Users\Alexandra\Desktop\var8\var8\var8\Modeling\bin\Debug\Modeling.exe
+C:\Users\Alexandra\Desktop\var8\var8\var8\Modeling\bin\Debug\Modeling.pdb
+C:\Users\Alexandra\Desktop\var8\var8\var8\Modeling\obj\x86\Debug\Modeling.csprojResolveAssemblyReference.cache
+C:\Users\Alexandra\Desktop\var8\var8\var8\Modeling\obj\x86\Debug\Modeling.Form1.resources
+C:\Users\Alexandra\Desktop\var8\var8\var8\Modeling\obj\x86\Debug\Modeling.Form2.resources
+C:\Users\Alexandra\Desktop\var8\var8\var8\Modeling\obj\x86\Debug\Modeling.Form3.resources
+C:\Users\Alexandra\Desktop\var8\var8\var8\Modeling\obj\x86\Debug\Modeling.Properties.Resources.resources
+C:\Users\Alexandra\Desktop\var8\var8\var8\Modeling\obj\x86\Debug\Modeling.csproj.GenerateResource.Cache
+C:\Users\Alexandra\Desktop\var8\Modeling\obj\x86\Debug\Modeling.exe
+C:\Users\Alexandra\Desktop\var8\Modeling\obj\x86\Debug\Modeling.pdb
+C:\Users\Alexandra\Desktop\var8\Modeling\bin\Debug\Modeling.exe
+C:\Users\Alexandra\Desktop\var8\Modeling\bin\Debug\Modeling.pdb
+C:\Users\Alexandra\Desktop\var8\Modeling\obj\x86\Debug\Modeling.csprojResolveAssemblyReference.cache
+C:\Users\Alexandra\Desktop\var8\Modeling\obj\x86\Debug\Modeling.Form1.resources
+C:\Users\Alexandra\Desktop\var8\Modeling\obj\x86\Debug\Modeling.Form2.resources
+C:\Users\Alexandra\Desktop\var8\Modeling\obj\x86\Debug\Modeling.Form3.resources
+C:\Users\Alexandra\Desktop\var8\Modeling\obj\x86\Debug\Modeling.Properties.Resources.resources
+C:\Users\Alexandra\Desktop\var8\Modeling\obj\x86\Debug\Modeling.csproj.GenerateResource.Cache
+C:\Users\Alexandra\Desktop\lab2\Modeling\obj\x86\Debug\Modeling.exe
+C:\Users\Alexandra\Desktop\lab2\Modeling\obj\x86\Debug\Modeling.pdb
+C:\Users\Alexandra\Desktop\lab2\Modeling\bin\Debug\Modeling.exe
+C:\Users\Alexandra\Desktop\lab2\Modeling\bin\Debug\Modeling.pdb
+C:\Users\Alexandra\Desktop\lab2\Modeling\obj\x86\Debug\Modeling.csprojResolveAssemblyReference.cache
+C:\Users\Alexandra\Desktop\lab2\Modeling\obj\x86\Debug\Modeling.Form1.resources
+C:\Users\Alexandra\Desktop\lab2\Modeling\obj\x86\Debug\Modeling.Form3.resources
+C:\Users\Alexandra\Desktop\lab2\Modeling\obj\x86\Debug\Modeling.Properties.Resources.resources
+C:\Users\Alexandra\Desktop\lab2\Modeling\obj\x86\Debug\Modeling.csproj.GenerateResource.Cache
