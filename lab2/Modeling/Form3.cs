@@ -51,7 +51,7 @@ namespace Modeling
             dataGridView2.Rows[1].Cells[5].Value = Math.Abs(elem.SampleDispersion() - elem.TheoreticalDispersion()).ToString();
             dataGridView2.Rows[1].Cells[6].Value = elem.SampleMedian().ToString();
             dataGridView2.Rows[1].Cells[7].Value = elem.SampleScope().ToString();
-            //наименивания
+
             string s1 = "Eη",
                    s2 = "x",
                    s3 = "|Eη - x|",
@@ -190,6 +190,26 @@ namespace Modeling
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart2_Click(object sender, EventArgs e)
         {
 
         }
