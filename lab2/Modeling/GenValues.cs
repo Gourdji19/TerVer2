@@ -58,6 +58,7 @@ namespace Modeling
             }
         }
 
+        //выборочное среднее
         public float SampleMean()
         {
             float sampleMean = 0;
@@ -68,7 +69,7 @@ namespace Modeling
             sampleMean /= num;
             return sampleMean;
         }
-
+        //выборочная дисперсия
         public float SampleDispersion()
         {
             float x = SampleMean();
@@ -80,17 +81,19 @@ namespace Modeling
             sampleDispersion /= num;
             return sampleDispersion;
         }
-
+        //матожидание
         public double MathExpectation()
         {
-            return Math.Pow((Math.PI / 2), (1 / 2)) * sigma;
+            return Math.Pow((Math.PI / 2), (0.5)) * sigma;
         }
 
+        //дисперсия
         public double TheoreticalDispersion()
         {
             return (2 - Math.PI / 2) * Math.Pow(sigma, 2);
         }
 
+        //размах выборки
         public float SampleScope()
         {
             float sampleScope = 0;
@@ -98,9 +101,9 @@ namespace Modeling
             return sampleScope;
         }
 
+        //выборочная медиана
         public float SampleMedian()
         {
-            //если одно значение?
             float sampleMedian = 0;
             if (num % 2 != 0)
             {
