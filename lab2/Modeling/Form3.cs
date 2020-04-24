@@ -26,18 +26,24 @@ namespace Modeling
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.RowCount = 2;
-            dataGridView1.ColumnCount = Convert.ToInt32(textBox2.Text);
-            elem = new GenValues((float)Convert.ToDouble(textBox1.Text), Convert.ToInt32(textBox2.Text));
-            for (int i = 0; i < Convert.ToInt32(textBox2.Text); i++)
+        dataGridView1.RowCount = 2;
+            int cols = 0;
+            if (Convert.ToInt32(textBox2.Text) < 500)
+                cols = Convert.ToInt32(textBox2.Text);
+            else
+                cols = 500;
+            dataGridView1.ColumnCount = cols;
+            elem = new GenValues((float)Convert.ToDouble(textBox1.Text), cols);
+            for (int i = 0; i < cols; i++)
                 elem.GenVal(elem.GetRandomValue());
             elem.GetVal();
 
-            for (int i = 0; i < Convert.ToInt32(textBox2.Text); i++)
+            for (int i = 0; i < cols; i++)
             {  
                 dataGridView1.Rows[0].Cells[i].Value = "x" + (i + 1);
                 dataGridView1.Rows[1].Cells[i].Value =  elem.val[i].ToString();
             }
+
 
             //заполнение таблицы числовых характеристик
             //значения
