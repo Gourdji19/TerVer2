@@ -108,6 +108,8 @@ namespace Modeling
                     if (elem.val[j] < elem.val[0] + h * i)
                         sum++;
                 }
+                if (Fn_list.Count != 0) 
+                    Fn_list.Add(elem.val[0] + h * i, Fn_list[Fn_list.Count - 1].Y);
                 Fn_list.Add(elem.val[0] + h * i, (double)sum / (double)n);
                 F_list.Add(elem.val[0] + h * i, 1 - Math.Exp(-(elem.val[0] +h * i) * (elem.val[0]+h * i) / (2 * sigma * sigma)));
               
