@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Drawing;
+using ZedGraph;
 using System.Drawing.Drawing2D;
 using Word = Microsoft.Office.Interop.Word;
 using System.Reflection;
@@ -23,10 +23,10 @@ namespace Modeling
 
         GenValues elem;
         int[,] gist1;
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-        dataGridView1.RowCount = 2;
+            dataGridView1.RowCount = 2;
             int cols = 0;
             if (Convert.ToInt32(textBox2.Text) < 500)
                 cols = Convert.ToInt32(textBox2.Text);
@@ -37,14 +37,11 @@ namespace Modeling
             for (int i = 0; i < cols; i++)
                 elem.GenVal(elem.GetRandomValue());
             elem.GetVal();
-
             for (int i = 0; i < cols; i++)
-            {  
+            {
                 dataGridView1.Rows[0].Cells[i].Value = "x" + (i + 1);
-                dataGridView1.Rows[1].Cells[i].Value =  elem.val[i].ToString();
+                dataGridView1.Rows[1].Cells[i].Value = elem.val[i].ToString();
             }
-
-
             //заполнение таблицы числовых характеристик
             //значения
             dataGridView2.RowCount = 2;
@@ -80,99 +77,118 @@ namespace Modeling
 
         private void button2_Click(object sender, EventArgs e)
         {
+            double sigma = Convert.ToDouble(textBox1.Text);
+            int N = Convert.ToInt32(textBox3.Text);
+            int n = elem.val.Length;
+            double[] interval = new double[N + 1];
+            double[] value = new double[N];
+            double[] f = new double[N];
 
-            //--------------------------------------------------------------------------------------------------
-            //выборочная функция распределения
-            chart2.Series[0].Points.Clear();
-            chart2.Series[0].LegendText = "выборочная";
-            chart2.Series[0].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            double Xmin = 0;
-            double Xmax = double.Parse(textBox2.Text);
-            double step = 1;
-            int count = (int)Math.Ceiling((Xmax - Xmin) / step);
-            double[] x1 = new double[count + 1];
-            double[] k1 = new double[count + 1];
+            //строим функции распределения
 
-            x1[0] = Xmin;
-            k1[0] = 0;
-            x1[count] = Xmin + step * (count);
-            k1[count] = 1;
-            for (int i = 1; i < count; i++)
+            ZedGraph.PointPairList F_list = new ZedGraph.PointPairList();
+            ZedGraph.PointPairList Fn_list = new ZedGraph.PointPairList();
+
+            zedGraphControl1.GraphPane.Title.Text = "График функций распределения";
+            zedGraphControl1.GraphPane.XAxis.Title.Text = "X";
+            zedGraphControl1.GraphPane.YAxis.Title.Text = "F(x)";
+
+            double D = 0.0;
+            
+
+            double h = elem.val[n - 1] / 1000.0;
+            int sum = 0;
+       
+            for (int i = 0; i < 1000; i++)
             {
-                x1[i] = Xmin + step * i;
-                k1[i] = elem.functionDisribution2(elem.val[i], (float)Convert.ToDouble(textBox1.Text));
+                sum = 0;
+                for (int j = 0; j < n; j++)
+                {
+                    double temp = elem.val[0] + h * i;
+                    if (elem.val[j] < elem.val[0] + h * i)
+                        sum++;
+                }
+                Fn_list.Add(elem.val[0] + h * i, (double)sum / (double)n);
+                F_list.Add(elem.val[0] + h * i, 1 - Math.Exp(-(elem.val[0] +h * i) * (elem.val[0]+h * i) / (2 * sigma * sigma)));
+              
+                D = Math.Max(D, Math.Abs((double)sum / (double)n - (1 - Math.Exp(-(elem.val[0] + h * i) * (elem.val[0] + h * i) / (2 * sigma * sigma)))));
             }
+            zedGraphControl1.GraphPane.CurveList.Clear();
 
-            chart2.ChartAreas[0].AxisX.Minimum = Xmin;
-            chart2.ChartAreas[0].AxisX.Maximum = Xmax;
-            chart2.ChartAreas[0].AxisX.MajorGrid.Interval = step;
-            chart2.Series[0].Points.DataBindXY(x1, k1);
+            textBox4.Text = D.ToString();
+            ZedGraph.LineItem CurveF = zedGraphControl1.GraphPane.AddCurve("F", F_list, Color.FromName("Red"), ZedGraph.SymbolType.None);
+            ZedGraph.LineItem CurveFn = zedGraphControl1.GraphPane.AddCurve("Fвыб", Fn_list, Color.FromName("Green"), ZedGraph.SymbolType.None);
 
-            //--------------------------------------------------------------------------------------------------
-            //теоретическая функция распределения
-            chart2.Series.Add("теоретическая");
-            chart2.Series["теоретическая"].Points.Clear();
-            chart2.Series["теоретическая"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            Xmin = 0;
-            Xmax = double.Parse(textBox2.Text);
-            step = 1;
-            double[] x2 = new double[count + 1];
-            double[] k2 = new double[count + 1];
 
-            x2[0] = Xmin;
-            x2[count] = Xmin + step * (count);
-            k2[0] = 0;
-            k2[count] = 1;
-            for (int i = 1; i < count; i++)
-            {
-                x2[i] = Xmin + step * i;
-                k2[i] = elem.functionDisribution2((float)(i * Xmax), (float)Convert.ToDouble(textBox1.Text));
-            }
-            chart2.Series["теоретическая"].Points.DataBindXY(x2, k2);
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int count = Int32.Parse(textBox2.Text);
-            double step = Math.Round(Math.Round(elem.val[count - 1], 3) / Int32.Parse(textBox3.Text), 3); 
-            chart1.Series[0].LegendText = "Элементов на интервале"; 
-            chart1.Series[0].Points.Clear(); 
-            int []gist = new int[Int32.Parse(textBox3.Text) + 1]; 
-            Array.Sort(elem.val); 
-            int k = 0; 
-            for (int i = 0; i < count; i++) 
-            { 
-                if ((elem.val[i] > k * step) && (elem.val[i] < (k + 1) * step)) 
-                { 
-                    gist[k]++; 
-                } 
-                else 
-                { 
-                    k++; 
-                    i--; 
-                }
-            } 
+            int N = Convert.ToInt32(textBox3.Text);
+            double h2 = (elem.val[elem.num - 1] - elem.val[0]) / N;
+            double sigma = Convert.ToDouble(textBox1.Text);
+            int n = elem.val.Length;
+            double[] interval = new double[N + 1];
+            double[] value = new double[N];
+            double[] f = new double[N];
+       
 
-            for (int j = 0; j < Int32.Parse(textBox3.Text); j++) 
-            { 
-                chart1.Series[0].Points.Add(gist[j]); 
-            }
-
-            chart1.DataBind();    
- 
-            //таблица результатов
-            //значения
-            dataGridView3.RowCount = 3;
-            dataGridView3.ColumnCount = Convert.ToInt32(textBox3.Text);
-            for(int i = 0; i < Convert.ToInt32(textBox3.Text); i++)
+            for (int i = 0; i < N; i++)
             {
-                double value1 = Math.Round(elem.GetMinPeriod() + step * (i + (1/2)), 3);
-                double value2 = Math.Round(elem.functionDistributionDensity2(value1, Convert.ToDouble(textBox1.Text)), 3);
-                double value3 = Math.Round((gist[i] / (Convert.ToInt32(textBox3.Text) * step)), 3);
-                dataGridView3.Rows[0].Cells[i].Value = value1.ToString();
-                dataGridView3.Rows[1].Cells[i].Value = value2.ToString();
-                dataGridView3.Rows[2].Cells[i].Value = value3.ToString();
+                interval[i] = elem.val[0] + (double)i * h2;
+
+
             }
+            interval[N] = elem.val[n - 1];
+
+
+            int sum2;
+            for (int i = 0; i < N; i++)
+            {
+                sum2 = 0;
+                for (int j = 0; j < n; j++)
+                {
+                    if ((interval[i] < elem.val[j]) && (elem.val[j] <= interval[i + 1]))
+                        sum2++;
+                }
+
+                value[i] = (double)sum2 / (h2 * (double)n);
+            }
+
+            GraphPane pane1 = zedGraphControl2.GraphPane;
+            pane1.CurveList.Clear();
+
+            BarItem curve1 = pane1.AddBar(null, null, value, Color.SlateBlue);
+            curve1.Bar.Fill.Type = FillType.Solid; 
+            zedGraphControl2.GraphPane.Title.Text = "Гистограмма";
+
+            pane1.YAxis.Scale.Min = 0.0;
+            pane1.YAxis.Scale.Max = value.Max() + 0.001;
+            pane1.BarSettings.MinClusterGap = 0.0f;
+            
+            zedGraphControl2.AxisChange();
+            zedGraphControl2.Invalidate();
+
+            //3 таблица
+
+            double max = 0.0;
+            for (int i = 0; i < N; i++)
+            {
+                dataGridView3.ColumnCount = N;
+                dataGridView3.RowCount = 3;
+                dataGridView3.Columns[i].HeaderText = string.Format("z" + (i + 1), i);
+                dataGridView3.Rows[0].Cells[i].Value = interval[i] + h2 * 0.5;
+                f[i] = ((interval[i] + h2 * 0.5) * Math.Exp(-(interval[i] + h2 * 0.5) * (interval[i] + h2 * 0.5) / (2 * sigma * sigma))) / (sigma * sigma);
+                dataGridView3.Rows[1].Cells[i].Value = f[i];
+                dataGridView3.Rows[2].Cells[i].Value = value[i];
+                if (Math.Abs(value[i] - f[i]) > max)
+                    max = Math.Abs(value[i] - f[i]);
+            }
+            textBox5.Text = max.ToString();
+          
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -192,7 +208,7 @@ namespace Modeling
 
         private void chart1_Click(object sender, EventArgs e)
         {
-
+             
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -215,7 +231,27 @@ namespace Modeling
 
         }
 
-        private void chart2_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void zedGraphControl1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
